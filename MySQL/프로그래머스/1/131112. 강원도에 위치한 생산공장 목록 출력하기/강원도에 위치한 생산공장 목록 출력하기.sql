@@ -1,6 +1,6 @@
 SELECT FACTORY_ID, FACTORY_NAME, ADDRESS
 FROM FOOD_FACTORY
-WHERE ADDRESS LIKE '강원%' # '%강원%'으로 검색해야 정확하지 않을까?
+WHERE ADDRESS LIKE '강원%'  # '%강원%'으로 검색해야 정확하지 않을까?
 ORDER BY FACTORY_ID ASC;
 
 
