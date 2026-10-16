@@ -1,20 +1,13 @@
-import java.util.Map;
-import java.util.HashMap;
+import java.util.Arrays;
+import java.util.stream.Collectors;
 
 class Solution {
     public int solution(String[][] clothes) {
-        Map<String, Integer> map = new HashMap<>();
-        
-        for (String[] cloth : clothes) {
-            String type = cloth[1];
-            map.put(type, map.getOrDefault(type, 0) + 1);
-        }
-        
-        int answer = 1;
-        for (int count : map.values()) {
-            answer *= (count + 1);
-        }
-        
-        return answer - 1;
+        return Arrays.stream(clothes)
+            .collect(Collectors.groupingBy(c -> c[1], Collectors.counting()))
+            .values()
+            .stream()
+            .reduce(1L, (x, y) -> x * (y + 1))
+            .intValue() - 1;
     }
 }
