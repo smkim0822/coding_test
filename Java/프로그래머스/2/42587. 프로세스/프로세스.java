@@ -21,12 +21,12 @@ class Solution {
                     break;
                 }
             }
-            
+                
             if (hasHigherPriorities) {
                 queue.offer(current);
             } else {
                 answer++;
-                
+
                 if (current[0] == location) {
                     return answer;
                 }
