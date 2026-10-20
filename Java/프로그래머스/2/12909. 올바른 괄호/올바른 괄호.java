@@ -1,24 +1,25 @@
-import java.util.Stack;
+import java.util.ArrayDeque;
+import java.util.Deque;
 
 class Solution {
     boolean solution(String s) {
-        Stack<Character> stack = new Stack<>();
-        
-        if (s.charAt(0) == ')') {
-            return false;
-        }
+        Deque<Character> stack = new ArrayDeque<>();
         
         for (char c : s.toCharArray()) {
-            if (c == '(') {
+            if (c == '(' || c == '{' || c == '[') {
                 stack.push(c);
-            }
-            
-            if (c == ')') {
+            } else {
                 if (stack.isEmpty()) {
                     return false;
                 }
                 
-                stack.pop();
+                char top = stack.pop();
+                
+                if (c == ')' && top != '('
+                    || c == '}' && top != '{'
+                    || c == ']' && top != '[') {
+                    return false;
+                }
             }
         }
         
