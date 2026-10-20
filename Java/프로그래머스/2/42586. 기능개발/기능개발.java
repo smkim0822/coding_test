@@ -8,7 +8,7 @@ class Solution {
         Queue<Integer> queue = new ArrayDeque<>();
         
         for (int i = 0; i < progresses.length; i++) {
-            queue.offer((int)Math.ceil((100.0 - progresses[i]) / speeds[i]));
+            queue.offer((int) Math.ceil((100.0 - progresses[i]) / speeds[i]));
         }
         
         List<Integer> answerList = new ArrayList<>();
