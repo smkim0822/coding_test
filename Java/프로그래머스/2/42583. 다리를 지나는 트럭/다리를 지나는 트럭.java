@@ -19,7 +19,7 @@ class Solution {
                     time++;
                     break;
                 }
-
+                
                 else {
                     bridge.offer(0);
                     time++;
