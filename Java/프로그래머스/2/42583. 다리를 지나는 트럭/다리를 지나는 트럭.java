@@ -12,14 +12,14 @@ class Solution {
                 if (bridge.size() == bridge_length) {
                     currentWeight -= bridge.poll();
                 }
-                
+
                 if ((currentWeight + truck) <= weight) {
                     bridge.offer(truck);
                     currentWeight += truck;
                     time++;
                     break;
                 }
-                
+
                 else {
                     bridge.offer(0);
                     time++;
