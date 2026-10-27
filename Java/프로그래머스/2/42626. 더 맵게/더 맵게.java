@@ -17,7 +17,7 @@ class Solution {
             
             int first = pq.poll();
             int second = pq.poll();
-            int newScoville = first + second * 2;
+            int newScoville = first + (second * 2);
             
             pq.offer(newScoville);
             mixCount++;
