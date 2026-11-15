@@ -10,7 +10,7 @@ rl.on('line', function (line) {
     input = line.split(' ');
 }).on('close', function () {
     const [a, b] = input.map(Number);
-    
+
     console.log(`a = ${a}`);
     console.log(`b = ${b}`);
 });
