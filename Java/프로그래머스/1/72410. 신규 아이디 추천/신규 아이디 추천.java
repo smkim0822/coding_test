@@ -18,8 +18,10 @@ class Solution {
         }
         
         StringBuilder sb = new StringBuilder(recommend_id);
-        while (sb.length() < 3) {
-            sb.append(sb.charAt(sb.length() - 1));
+        if (sb.length() <= 2) {
+            while (sb.length() < 3) {
+                sb.append(sb.charAt(sb.length() - 1));
+            }
         }
         
         return sb.toString();
