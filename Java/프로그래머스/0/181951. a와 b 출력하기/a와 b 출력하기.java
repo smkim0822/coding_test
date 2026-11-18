@@ -12,7 +12,7 @@ public class Solution {
         int b = Integer.parseInt(st.nextToken());
         
         StringBuilder sb = new StringBuilder();
-        sb.append("a = ").append(a).append("\n").append("b = ").append(b);
+        sb.append("a = ").append(a).append("\nb = ").append(b);
         System.out.println(sb);
     }
 }
