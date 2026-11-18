@@ -7,7 +7,8 @@ public class Solution {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String str = br.readLine();
         
-        StringBuilder sb = new StringBuilder(str);
+        StringBuilder sb = new StringBuilder();
+        sb.append(str);
         System.out.println(sb);
     }
 }
