@@ -1,22 +1,18 @@
 class Solution {
     public int solution(int[] num_list) {
-        // num_list 배열을 순회하며 원소가 홀수이면 oddNum에 이어붙이고 원소가 짝수이면 evenNum에 이어붙인다.
-        StringBuilder oddNumSb = new StringBuilder();
-        StringBuilder evenNumSb = new StringBuilder();
+        // num_list 배열을 순회하며 원소 홀짝 판별하고 oddNum, evenNum 뒤에 이어붙이기
+        int oddNum = 0;
+        int evenNum = 0;
         
         for (int num : num_list) {
             if (num % 2 != 0) {
-                oddNumSb.append(num);
+                oddNum = oddNum * 10 + num;
             } else {
-                evenNumSb.append(num);
+                evenNum = evenNum * 10 + num;
             }
         }
         
-        // oddNum과 evenNum을 정수로 변환하여 더한다.
-        int oddNum = Integer.parseInt(oddNumSb.toString());
-        int evenNum = Integer.parseInt(evenNumSb.toString());
-        
-        // 합 리턴
+        // 합 반환
         return oddNum + evenNum;
     }
 }
