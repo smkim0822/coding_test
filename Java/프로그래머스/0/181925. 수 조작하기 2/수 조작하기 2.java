@@ -1,18 +1,20 @@
 class Solution {
     public String solution(int[] numLog) {
         int len = numLog.length;
-        String result = "";
+        StringBuilder sb = new StringBuilder(len - 1);
         
         for (int i = 1; i < len; i++) {
-            int control = numLog[i] - numLog[i - 1];
-            switch (control) {
-                    case 1 -> result += 'w';
-                    case -1 -> result += 's';
-                    case 10 -> result += 'd';
-                    case -10 -> result += 'a';
-            }
+            char ch = switch(numLog[i] - numLog[i - 1]) {
+                    case 1 -> 'w';
+                    case -1 -> 's';
+                    case 10 -> 'd';
+                    case -10 -> 'a';
+                    default -> ' ';
+            };
+            
+            sb.append(ch);
         }
         
-        return result;
+        return sb.toString();
     }
 }
